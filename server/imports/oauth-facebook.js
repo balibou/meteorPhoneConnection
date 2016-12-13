@@ -21,9 +21,30 @@ const init = () => {
   // registerHandler();
 
   // Create a user.
-  var options = {phone:'+972545999999'};
-  Accounts.createUserWithPhone(options);
+  // var options = {phone:'+447577763269'};
+  // Accounts.createUserWithPhone(options);
   // console.log('Phone verification status is :', Accounts.isPhoneVerified());
+  const isPhoneVerified = () => {
+    var me = this.userId;
+    return !!(me && me.phone && me.phone.verified);
+};
+  console.log(isPhoneVerified());
+
+  SMS.twilio = {
+    FROM: 'Ben',
+    ACCOUNT_SID: Meteor.settings.oauth.twilio.accountSid,
+    AUTH_TOKEN: Meteor.settings.oauth.twilio.authToken,
+  };
+  const client = new Twilio({
+    from: Meteor.settings.oauth.twilio.phone,
+    sid: Meteor.settings.oauth.twilio.accountSid,
+    token: Meteor.settings.oauth.twilio.authToken,
+  });
+  // console.log(client);
+  client.sendSMS({
+    to: '+447577763269',
+    body: 'Hello Ben!'
+  });
 }
 
 // const registerHandler = () => {
