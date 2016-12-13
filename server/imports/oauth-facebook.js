@@ -41,10 +41,10 @@ const init = () => {
     token: Meteor.settings.oauth.twilio.authToken,
   });
   // console.log(client);
-  client.sendSMS({
-    to: '+447577763269',
-    body: 'Hello Ben!'
-  });
+  // client.sendSMS({
+  //   to: '+447577763269',
+  //   body: 'Hello Ben!'
+  // });
 }
 
 // const registerHandler = () => {
