@@ -3,6 +3,11 @@
     "facebook": {
       "appId": "",
       "secret": ""
+    },
+    "twilio": {
+      "phone": "+441840901030",
+      "accountSid": "AC0c3704232ccc88aa90b227e333f4fd84",
+      "authToken": "f6aca8f602828bffef5b345b712e09fa"
     }
   }
 }
